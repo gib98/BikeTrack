@@ -1,14 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-<<<<<<< HEAD
-import Login from '@/components/Login';
 import Home from '@/components/Home';
-
-=======
-import Hello from '@/components/Hello';
 import Goodbye from '@/components/Goodbye'
 import rackTemplate from '@/components/rackTemplate'
->>>>>>> Parker/RackList
 
 Vue.use(Router);
 
@@ -16,18 +10,10 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: Home,
-      meta: { requiresAuth: true }
     },
     {
-<<<<<<< HEAD
-    path: '/login',
-    name: 'login',
-    component: Login,
-    meta: { requiresAuth: false }
-    }
-=======
         path: '/goodbye',
         name: 'Goodbye',
         component: Goodbye,
@@ -51,6 +37,5 @@ export default new Router({
         component: rackTemplate,
 
    }
->>>>>>> Parker/RackList
   ],
 });
