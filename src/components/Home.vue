@@ -8,9 +8,9 @@
     <br />
     <router-link to="/rack3" tag ="button">Rack3</router-link>
     <br />-->
-    <div id="addressInput" v-if='Math.abs(currLoc-bikeLoc)>=50'>
+    <div id="adrBox" v-if='Math.abs(currLoc-bikeLoc)>=50'>
       <input v-model="message" placeholder="Enter Destination">
-      <button id="enter">Enter</button>
+      <button id="submit">Submit</button>
 
     </div>
 
@@ -21,9 +21,20 @@
 
 
     </div>
-    <div v-if='Math.abs(currLoc-bikeLoc)<=50'>
-      <input v-model="message" placeholder="enter number of bikes">
+    <div v-if='Math.abs(currLoc-bikeLoc)<=50' id='report'>
+      <input v-model="numBikes" placeholder="Enter Current Number of Bikes">
       <button id="enter">Enter</button>
+    </div>
+
+
+    <div id= 'newBikeRack' v-if='Math.abs(currLoc-bikeLoc)>=50'>
+        <br>
+        <h3>{{'Add a Bike Rack at Current Location'}}</h3>
+        <input v-model="numBikes" placeholder="Current # of Bikes">
+        <input v-model="numBikes" placeholder="Total Bike Capacity">
+        <br>
+        <br>
+        <button id="submit">Submit</button>
     </div>
 
     <!--<script src=""></script>
@@ -48,7 +59,7 @@ export default {
   data() {
     return {
       currLoc: 500,
-      bikeLoc: 500,
+      bikeLoc: 100,
 
 
     };
