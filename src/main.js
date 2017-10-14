@@ -6,7 +6,7 @@ import router from './router';
 import Home from '@/components/Home'
 
 import rackTemplate from '@/components/rackTemplate'
-
+import maps from '@/components/maps'
 Vue.config.productionTip = false;
 Vue.use(require('vue-script2'))
 
@@ -18,6 +18,7 @@ Vue.use(require('vue-script2'))
 
 Vue.component('home',Home);
 Vue.component('racktemplate',rackTemplate);
+Vue.component('maps',maps);
 new Vue({
   el: '#app',
   router,

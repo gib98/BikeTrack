@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/components/Home';
+import maps from '@/components/maps';
 import rackTemplate from '@/components/rackTemplate'
 
 Vue.use(Router);
@@ -32,7 +33,7 @@ export default new Router({
         name: 'Rack3',
         component: rackTemplate,
 
-   }
+   },
    {
        path: '/maps',
        name: 'Maps',
