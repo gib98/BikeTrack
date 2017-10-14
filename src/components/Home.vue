@@ -2,12 +2,6 @@
   <div class="home">
     <h1>{{ 'BikeTrack' }}</h1>
 
-    <!--<router-link to="/rack1" tag ="button">Rack1</router-link>
-    <br />
-    <router-link to="/rack2" tag ="button">Rack2</router-link>
-    <br />
-    <router-link to="/rack3" tag ="button">Rack3</router-link>
-    <br />-->
     <div id="adrBox" v-if='Math.abs(currLoc-bikeLoc)>=50'>
       <input v-model="message" placeholder="Enter Destination">
       <button id="submit">Submit</button>
@@ -17,9 +11,6 @@
 
     <div id="map">
 
-    <script src="../maps.js" type="text/javascript"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6_lGUllSRIbvmF2IDO-KJRz7F13PPZpY&callback=initMap"
-            type="text/javascript"></script>
 
     </div>
 
