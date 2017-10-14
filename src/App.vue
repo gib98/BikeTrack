@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <header>
-      <span>{{appName}}</span>
+
+
+        <img id='logo' src="./assets/logo.png" alt="Vue.js PWA" style='float:left;width:48px;height:48px;'></img>
+        <span style= 'float:left;'>{{appName}}</span>
     </header>
+
     <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
       <router-view></router-view>
     </main>
   </div>
@@ -43,7 +46,7 @@ main {
 header {
   margin: 0;
   height: 56px;
-  padding: 0 16px 0 24px;
+  padding: 0px 16px 0px 16px;
   background-color: #35495E;
   color: #ffffff;
 }
