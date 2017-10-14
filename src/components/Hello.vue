@@ -4,6 +4,7 @@
     <div id="turtle-count">
         We have <span v-bind:class="{'many-turtles': turtle > maxTurtles}">{{turtle}}</span> turtles.
     </div>
+    <goodbye></goodbye>
 
     Turtle: {{ turtle }}
     <div id = "button">
@@ -22,8 +23,6 @@
 
 
 <script>
-
-
 export default {
   name: 'hello',
   data() {
