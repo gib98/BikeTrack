@@ -3,14 +3,14 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
-import Hello from '@/components/Hello'
+import Home from '@/components/Home'
 import Goodbye from '@/components/Goodbye'
 import rackTemplate from '@/components/rackTemplate'
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 
-Vue.component('hello',Hello);
+Vue.component('home',Home);
 Vue.component('goodbye',Goodbye);
 Vue.component('racktemplate',rackTemplate);
 new Vue({

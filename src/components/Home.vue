@@ -1,7 +1,6 @@
 <template>
-  <div class="hello">
+  <div class="home">
     <h1>{{ 'BikeTrack' }}</h1>
-    <h3>{{'Bike Rack List'}}</h3>
 
     <!--<router-link to="/rack1" tag ="button">Rack1</router-link>
     <br />
@@ -15,9 +14,14 @@
 
 
     </div>
+    <div v-if='Math.abs(currLoc-bikeLoc)<=50'>
+      <input v-model="message" placeholder="enter number of bikes">
+      <button id="enter">Enter</button>
+    </div>
 
     <!--<script src=""></script>
     <script src=""></script>-->
+
 
   </div>
 
@@ -33,12 +37,12 @@
 
 
 export default {
-  name: 'hello',
+  name: 'home',
   data() {
     return {
-      rackCurr :0,
-      rackCap :0,
-      rackProj :0,
+      currLoc: 500,
+      bikeLoc: 520,
+
 
     };
   },
