@@ -7,6 +7,8 @@ import Home from '@/components/Home'
 import Goodbye from '@/components/Goodbye'
 import rackTemplate from '@/components/rackTemplate'
 Vue.config.productionTip = false;
+Vue.use(require('vue-script2'))
+
 
 /* eslint-disable no-new */
 
