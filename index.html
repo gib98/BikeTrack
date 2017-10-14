@@ -23,9 +23,22 @@
     <% for (var chunk of webpack.chunks) {
         for (var file of chunk.files) {
           if (file.match(/\.(js|css)$/)) { %>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.4.0/firebaseui.css" />
     <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
   </head>
   <body>
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyC4hI9EJEgtlyuTE_S-s-LHnZ-AOR8MLmo",
+            authDomain: "bike-track-238aa.firebaseapp.com",
+            databaseURL: "https://bike-track-238aa.firebaseio.com",
+            projectId: "bike-track-238aa",
+            storageBucket: "bike-track-238aa.appspot.com",
+            messagingSenderId: "383183824291"
+        };
+        firebase.initializeApp(config);
+    </script>
     <noscript>
       This is your fallback content in case JavaScript fails to load.
     </noscript>
