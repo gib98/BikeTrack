@@ -8,6 +8,13 @@
     <br />
     <router-link to="/rack3" tag ="button">Rack3</router-link>
     <br />-->
+    <div id="addressInput" v-if='Math.abs(currLoc-bikeLoc)>=50'>
+      <input v-model="message" placeholder="Enter Destination">
+      <button id="enter">Enter</button>
+
+    </div>
+
+
     <div id="map">
 
 
@@ -41,7 +48,7 @@ export default {
   data() {
     return {
       currLoc: 500,
-      bikeLoc: 520,
+      bikeLoc: 500,
 
 
     };
