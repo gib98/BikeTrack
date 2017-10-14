@@ -17,10 +17,12 @@
 
     <div id="map">
 
-
-
+    <script src="../maps.js" type="text/javascript"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6_lGUllSRIbvmF2IDO-KJRz7F13PPZpY&callback=initMap"
+            type="text/javascript"></script>
 
     </div>
+
     <div v-if='Math.abs(currLoc-bikeLoc)<=50' id='report'>
       <input v-model="numBikes" placeholder="Enter Current Number of Bikes">
       <button id="enter">Enter</button>
@@ -31,14 +33,13 @@
         <br>
         <h3>{{'Add a Bike Rack at Current Location'}}</h3>
         <input v-model="numBikes" placeholder="Current # of Bikes">
-        <input v-model="numBikes" placeholder="Total Bike Capacity">
+        <input v-model="totBikes" placeholder="Total Bike Capacity">
         <br>
         <br>
         <button id="submit">Submit</button>
     </div>
 
-    <!--<script src=""></script>
-    <script src=""></script>-->
+
 
 
   </div>
@@ -60,6 +61,7 @@ export default {
     return {
       currLoc: 500,
       bikeLoc: 100,
+
 
 
     };
