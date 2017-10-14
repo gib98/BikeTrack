@@ -1,14 +1,18 @@
 <template>
-  <div class="hello">
+  <div class="racktemplate">
     <h1>{{ 'BikeTrack' }}</h1>
-    <h3>{{'Bike Rack List'}}</h3>
+    <h3>{{'Rack Info'}}</h3>
+    Current values = {{rackCurr}}/{{rackCap}}
+    <br />
+    Projected Values = {{rackProj}}/{{rackCap}}
+    <br />
 
-    <router-link to="/rack1" tag ="button">Rack1</router-link>
-    <br />
-    <router-link to="/rack2" tag ="button">Rack2</router-link>
-    <br />
-    <router-link to="/rack3" tag ="button">Rack3</router-link>
-    <br />
+
+
+    <router-link to="/" tag="button">Back</router-link>
+
+
+
   </div>
 </template>
 
@@ -17,10 +21,6 @@
 
 <script>
 
-
-
-
-
 export default {
   name: 'hello',
   data() {
@@ -28,7 +28,6 @@ export default {
       rackCurr :0,
       rackCap :0,
       rackProj :0,
-
     };
   },
 };
