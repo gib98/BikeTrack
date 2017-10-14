@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Map</title>
+<style>
+  #map {
+  height: 400px;
+  width: 100%;
+  }
+</style>
+</head>
+
+
+<body>
+  <div id="map"></div>
+  address (leave blank for current location): <input type="text" name="address" id="adrBox">
+  score: <input type="text" name="score" id="scoreBox">
+  <input type="submit" name="submit" id="submit" onclick="add()">
+  <script src="src/maps.js" type="text/javascript"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6_lGUllSRIbvmF2IDO-KJRz7F13PPZpY&callback=initMap"
+    type="text/javascript"></script>
+</body>
+
+</html>
