@@ -10,14 +10,16 @@
   </div>
 </template>
 
+
 <script>
+
 export default {
   name: 'app',
   data() {
       return {
           appName: 'BikeTrack'
       }
-  }
+  },
 };
 </script>
 
