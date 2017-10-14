@@ -4,35 +4,32 @@
     <div id="turtle-count">
         We have <span v-bind:class="{'many-turtles': turtle > maxTurtles}">{{turtle}}</span> turtles.
     </div>
+    <goodbye></goodbye>
 
     Turtle: {{ turtle }}
+    <div id = "button">
+
+      <button v-on:click="turtle += 1">rack 1</button>
+      <button v-on:click="turtle += 1">rack 2</button>
+      <button v-on:click="turtle += 1">rack 3</button>
+    </div>
+
+
+
   </div>
 </template>
 
 
 
-<script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
 
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyC4hI9EJEgtlyuTE_S-s-LHnZ-AOR8MLmo",
-    authDomain: "bike-track-238aa.firebaseapp.com",
-    databaseURL: "https://bike-track-238aa.firebaseio.com",
-    projectId: "bike-track-238aa",
-    storageBucket: "bike-track-238aa.appspot.com",
-    messagingSenderId: "383183824291"
-  };
-  firebase.initializeApp(config);
-
 export default {
   name: 'hello',
-  mixins: [mixin],
   data() {
     return {
       msg: 'Welcome to Your Vue.js PWA',
-      turtle: 4,
-      maxTurtles: 4
+      turtle: 0,
+      maxTurtles: 4,
     };
   },
 };
