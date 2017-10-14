@@ -33,5 +33,11 @@ export default new Router({
         component: rackTemplate,
 
    }
+   {
+       path: '/maps',
+       name: 'Maps',
+       component: maps,
+
+  }
   ],
 });

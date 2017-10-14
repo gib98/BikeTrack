@@ -11,13 +11,13 @@
     <div id="adrBox" v-if='Math.abs(currLoc-bikeLoc)>=50'>
       <input v-model="message" placeholder="Enter Destination">
       <button id="submit">Submit</button>
-
+    <router-link to="/maps" tag ="Maps">Maps</router-link>
     </div>
 
 
     <div id="map">
 
-    
+
 
     </div>
 
