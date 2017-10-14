@@ -15,7 +15,7 @@ export default {
   name: 'app',
   data() {
       return {
-          appName: 'Bike Track'
+          appName: 'BikeTrack'
       }
   }
 };
