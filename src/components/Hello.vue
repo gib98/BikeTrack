@@ -1,23 +1,30 @@
 <template>
   <div class="hello">
     <h1>{{ 'BikeTrack' }}</h1>
-    <h3>{{'Bike Rack List'}}</h3>
+    <!--<h3>{{'Bike Rack List'}}</h3>
 
     <router-link to="/rack1" tag ="button">Rack1</router-link>
     <br />
     <router-link to="/rack2" tag ="button">Rack2</router-link>
     <br />
     <router-link to="/rack3" tag ="button">Rack3</router-link>
-    <br />
+    <<br />-->
+    <div id="map">
+
+
+
+
+    </div>
   </div>
+
+
+
 </template>
 
 
 
 
 <script>
-
-
 
 
 
