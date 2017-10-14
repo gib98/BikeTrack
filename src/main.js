@@ -28,7 +28,7 @@ Vue.config.productionTip = false;
 // }
 //
 
-//https://forum.vuejs.org/t/firebase-auth-and-vue-router/3086/3
+//lifesaver: https://forum.vuejs.org/t/firebase-auth-and-vue-router/3086/3
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (!firebase.auth().currentUser) {
@@ -49,6 +49,7 @@ router.beforeEach((to, from, next) => {
 Vue.component('login', Login);
 Vue.component('home', Home)
 
+//lifesaver: https://forum.vuejs.org/t/firebase-auth-and-vue-router/3086/3
 const unsubscribe = firebase.initializeApp(config).auth().onAuthStateChanged(() => {
     new Vue({
       el: '#app',
