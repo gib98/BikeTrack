@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/components/Home';
-import Goodbye from '@/components/Goodbye'
 import rackTemplate from '@/components/rackTemplate'
 
 Vue.use(Router);
@@ -13,11 +12,8 @@ export default new Router({
       name: 'Home',
       component: Home,
     },
-    {
-        path: '/goodbye',
-        name: 'Goodbye',
-        component: Goodbye,
-    },
+
+
    {
       path: '/rack1',
       name: 'Rack1',

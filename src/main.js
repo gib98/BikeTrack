@@ -4,16 +4,19 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import Home from '@/components/Home'
-import Goodbye from '@/components/Goodbye'
+
 import rackTemplate from '@/components/rackTemplate'
+
 Vue.config.productionTip = false;
 Vue.use(require('vue-script2'))
 
 
 /* eslint-disable no-new */
 
+
+
+
 Vue.component('home',Home);
-Vue.component('goodbye',Goodbye);
 Vue.component('racktemplate',rackTemplate);
 new Vue({
   el: '#app',

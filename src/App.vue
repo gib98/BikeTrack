@@ -4,7 +4,7 @@
 
 
         <img id='logo' src="./assets/logo.png" alt="Vue.js PWA" style='float:left;width:48px;height:48px;'></img>
-        <span style= 'float:left;'>{{appName}}</span>
+        <span style= 'float:left; padding-left: 1.8em;'>{{appName}}</span>
     </header>
 
     <main>
