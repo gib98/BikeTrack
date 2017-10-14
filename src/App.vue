@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <span>Vue.js PWA</span>
+      <span>{{appName}}</span>
     </header>
     <main>
       <img src="./assets/logo.png" alt="Vue.js PWA">
@@ -13,6 +13,11 @@
 <script>
 export default {
   name: 'app',
+  data() {
+      return {
+          appName: 'Bike Track'
+      }
+  }
 };
 </script>
 

@@ -1,30 +1,38 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="http://chat.vuejs.org/" target="_blank" rel="noopener">Vue Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank" rel="noopener">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <div id="turtle-count">
+        We have <span v-bind:class="{'many-turtles': turtle > maxTurtles}">{{turtle}}</span> turtles.
+    </div>
+
+    Turtle: {{ turtle }}
   </div>
 </template>
 
+
+
+<script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+
 <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC4hI9EJEgtlyuTE_S-s-LHnZ-AOR8MLmo",
+    authDomain: "bike-track-238aa.firebaseapp.com",
+    databaseURL: "https://bike-track-238aa.firebaseio.com",
+    projectId: "bike-track-238aa",
+    storageBucket: "bike-track-238aa.appspot.com",
+    messagingSenderId: "383183824291"
+  };
+  firebase.initializeApp(config);
+
 export default {
   name: 'hello',
+  mixins: [mixin],
   data() {
     return {
       msg: 'Welcome to Your Vue.js PWA',
+      turtle: 4,
+      maxTurtles: 4
     };
   },
 };
@@ -34,6 +42,10 @@ export default {
 <style>
 h1, h2 {
   font-weight: normal;
+}
+
+.many-turtles {
+    color: red;
 }
 
 ul {
