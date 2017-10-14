@@ -5,6 +5,7 @@ import App from './App';
 import router from './router';
 import Hello from '@/components/Hello'
 import Goodbye from '@/components/Goodbye'
+<<<<<<< HEAD
 import Login from '@/components/Login'
 import firebase from 'firebase';
 import firebaseui from 'firebaseui'
@@ -12,10 +13,14 @@ import {config} from './helpers/firebaseConfig'
 import Home from '@/components/Home'
 import {UserState} from './helpers/state'
 
+=======
+import rackTemplate from '@/components/rackTemplate'
+>>>>>>> Parker/RackList
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 
+<<<<<<< HEAD
 // Vue.component('hello',Hello);
 // Vue.component('goodbye',Goodbye);
 // Vue.prototype.firebaseInited = false;
@@ -59,4 +64,14 @@ const unsubscribe = firebase.initializeApp(config).auth().onAuthStateChanged(() 
     });
     unsubscribe();
 
+=======
+Vue.component('hello',Hello);
+Vue.component('goodbye',Goodbye);
+Vue.component('racktemplate',rackTemplate);
+new Vue({
+  el: '#app',
+  router,
+  template: '<App/>',
+  components: { App }
+>>>>>>> Parker/RackList
 });
