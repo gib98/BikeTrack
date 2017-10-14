@@ -1,12 +1,6 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div id="turtle-count">
-        We have <span v-bind:class="{'many-turtles': turtle > maxTurtles}">{{turtle}}</span> turtles.
-    </div>
-    <goodbye></goodbye>
-
-    Turtle: {{ turtle }}
+  <div class="goodbye">
+    Goodbye
   </div>
 </template>
 
@@ -27,13 +21,11 @@
   // firebase.initializeApp(config);
 
 export default {
-  name: 'hello',
+  name: 'goodbye',
   //mixins: [mixin],
   data() {
     return {
-      msg: 'Welcome to Your Vue.js PWA',
-      turtle: 4,
-      maxTurtles: 4
+
     };
   },
 };

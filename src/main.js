@@ -3,13 +3,18 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import Hello from '@/components/Hello'
+import Goodbye from '@/components/Goodbye'
 
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
+
+Vue.component('hello',Hello);
+Vue.component('goodbye',Goodbye);
 new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App },
+  components: { App }
 });
