@@ -1,0 +1,39 @@
+main {
+  text-align: center;
+  margin-top: 40px;
+}
+
+header {
+  margin: 0;
+  height: 64px;
+  padding: 10px 10px 0px 10px;
+  background-color: #35495E;
+
+  font-family: 'Courier';
+
+}
+
+header span {
+  display: block;
+  position: relative;
+  font-size: 64px;
+  line-height: 0.5;
+  letter-spacing: .02em;
+  font-weight: 825;
+  box-sizing: border-box;
+  padding-top: 10px;
+  font-variant-caps: titling-caps;
+  color: #FFA500;
+}
+
+
+h3{
+  color: #FFA500;
+
+}
+
+body{
+      background-color: #251400;
+        margin: 0;
+        text-align: center;
+}
