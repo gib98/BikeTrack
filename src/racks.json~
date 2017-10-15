@@ -1,0 +1,11 @@
+[
+    new google.maps.Marker({
+        position: {lat: 33, lng: -83},
+        map: map,
+    }),
+    new google.maps.Marker({
+        position: {lat: 34, lng: -83},
+        map: map,
+    })
+
+]

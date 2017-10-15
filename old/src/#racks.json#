@@ -1,0 +1,11 @@
+racks = "[
+    {
+        position: {lat: 33, lng: -83},
+        map: map,
+    },
+    {
+        position: {lat: 34, lng: -83},
+        map: map,
+    }
+
+]"
