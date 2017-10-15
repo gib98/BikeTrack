@@ -5,19 +5,26 @@ var map;
 var defaultLoc = {lat: -34.397, lng: 150.644};
 var geocoder;
 var dest;
+var midpoint;
 var p1;
 var p2;
+var json;
+var rend;
+var dists;
 
-var rend = new google.maps.DirectionsRenderer();
+
+
 
 
 
 
 function initMap() {
+    rend = new google.maps.DirectionsRenderer();
+
 
     map = new google.maps.Map(document.getElementById('map'), {
           center: defaultLoc,
-          zoom: 10
+          zoom: 17
         });
     you = new google.maps.Marker({
         map: map,
@@ -61,13 +68,61 @@ function initMap() {
 
 
 
+
     markers = [
         new google.maps.Marker({
-            position: {lat: 33, lng: -83},
-            map: map,
-            title: "hi"
-        })
+            position: {lat: 33.776687, lng: -84.396275},
+            map: map
+        }),
+        new google.maps.Marker({
+            position: {lat: 33.776890, lng: -84.396896},
+            map: map
+        }),
+        new google.maps.Marker({
+            position: {lat: 33.777005, lng: -84.396781},
+            map: map
+        }),
+        new google.maps.Marker({
+            position: {lat: 33.776767, lng: -84.396271},
+            map: map
+        }),
+        new google.maps.Marker({
+            position: {lat: 33.776638, lng: -84.396313},
+            map: map
+        }),
+        new google.maps.Marker({
+            position: {lat: 33.776489, lng: -84.396267},
+            map: map
+        }),
+        new google.maps.Marker({
+            position: {lat: 33.776272, lng: -84.395696},
+            map: map
+        }),
+        new google.maps.Marker({
+            position: {lat: 33.775941, lng: -84.395703},
+            map: map
+        }),
+        new google.maps.Marker({
+            position: {lat: 33.775940, lng: -84.395603},
+            map: map
+        }),
+        new google.maps.Marker({
+            position: {lat: 33.775859, lng: -84.395431},
+            map: map
+        }),
+        new google.maps.Marker({
+            position: {lat: 33.775991, lng: -84.395431},
+            map: map
+        }),
+        new google.maps.Marker({
+            position: {lat: 33.776808, lng: -84.395546},
+            map: map
+        }),
+
+
     ];
+
+
 
 
 
@@ -89,39 +144,54 @@ function geocodeAddress(geocoder, resultsMap) {
             alert('Geocode was not successful for the following reason: ' + status);
         }
     });
-    var dists=[];
+    dists=[];
+    setTimeout(closest, 1000);
+}
+function closest() {
     for(var i = 0; i < markers.length; i++) {
-        console.log(markers[i]);
-        console.log(dest);
-        dists[i] = distance(markers[i].getPosition(),
+
+        dists[i] = getDistance(markers[i].getPosition(),
                             dest.getPosition());
     }
-    var max = 0;
-    var maxi = 0;
-    for(var i = 0; i < dists.length; i++) {
-        if (dists[i] > max) {
-            max = dists[i];
-            maxi = i;
+    console.log(dists);
+    var min = dists[0];
+    var mini = 0;
+    for(var i = 1; i < dists.length; i++) {
+        if (dists[i] < min) {
+            min = dists[i];
+            mini = i;
         }
     }
-    var midpoint = markers[maxi];
+    midpoint = markers[mini];
+    console.log(you);
+    console.log(dest);
     console.log(midpoint);
+    dists = [];
+
+    setTimeout(getRoute, 1000);
+}
+function getRoute() {
 
     new google.maps.DirectionsService().route({
         origin: you.getPosition(),
         waypoints: [{location: midpoint.getPosition()}],
         destination: dest.getPosition(),
         provideRouteAlternatives: false,
-        travelMode: 'BICYCLING',
+        travelMode: 'WALKING',
         unitSystem: google.maps.UnitSystem.IMPERIAL
 
     },function(result, status) {draw(result,
                                      status)});
-
 }
 
+
+
 function draw(res, stat) {
+
     console.log("DRAW");
+
+    rend.setMap(null);
+    rend.setDirections(null);
 
     rend.setMap(map);
 
@@ -149,9 +219,17 @@ function Bikerack(up, score) {
 
 
 
-function distance(x,y) {
-    a = Math.pow(x.lat() - y.lat(), 2);
-    b = Math.pow(x.lng() - y.lng(), 2);
-    return Math.sqrt(a + b);
-}
+
+var rad = function(x) {
+  return x * Math.PI / 180;
+};
+
+var getDistance = function(p1, p2) {
+  return google.maps.geometry.spherical.computeDistanceBetween(p1, p2);
+
+};
 function add() {}
+
+function toRadians(d) {
+    return d*Math.PI/180
+}
