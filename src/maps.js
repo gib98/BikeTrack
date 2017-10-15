@@ -5,7 +5,11 @@ var map;
 var defaultLoc = {lat: -34.397, lng: 150.644};
 var geocoder;
 var dest;
-console.log(dest);
+var p1;
+var p2;
+
+var rend = new google.maps.DirectionsRenderer();
+
 
 
 
@@ -64,17 +68,11 @@ function initMap() {
             title: "hi"
         })
     ];
-    for(var i = 0; i < markers.length; i++) {
 
-        markers[i].addListener("click",
-                               function(m) {
-
-                                   console.log(findRack(m).getTitle());
-                               });
-    }
 
 
 }
+
 
 function geocodeAddress(geocoder, resultsMap) {
     var address = document.getElementById('adrBox').value;
@@ -91,6 +89,44 @@ function geocodeAddress(geocoder, resultsMap) {
             alert('Geocode was not successful for the following reason: ' + status);
         }
     });
+    var dists=[];
+    for(var i = 0; i < markers.length; i++) {
+        console.log(markers[i]);
+        console.log(dest);
+        dists[i] = distance(markers[i].getPosition(),
+                            dest.getPosition());
+    }
+    var max = 0;
+    var maxi = 0;
+    for(var i = 0; i < dists.length; i++) {
+        if (dists[i] > max) {
+            max = dists[i];
+            maxi = i;
+        }
+    }
+    var midpoint = markers[maxi];
+    console.log(midpoint);
+
+    new google.maps.DirectionsService().route({
+        origin: you.getPosition(),
+        waypoints: [{location: midpoint.getPosition()}],
+        destination: dest.getPosition(),
+        provideRouteAlternatives: false,
+        travelMode: 'BICYCLING',
+        unitSystem: google.maps.UnitSystem.IMPERIAL
+
+    },function(result, status) {draw(result,
+                                     status)});
+
+}
+
+function draw(res, stat) {
+    console.log("DRAW");
+
+    rend.setMap(map);
+
+    rend.setDirections(res);
+
 }
 
 function out(num,score,name) {
@@ -111,20 +147,7 @@ function Bikerack(up, score) {
     })
 }
 
-function findRack(loc) {
-    var dists = [];
-    for(var i = 0; i < markers.length; i++) {
-        dists[i] = distance(loc.latLng,markers[i].getPosition())
 
-    }
-    var max = 0;
-    for(var i = 0; i < dists.length; i++) {
-        if(dists[i] > max) {max = i;}
-
-
-    }
-    return markers[max];
-}
 
 function distance(x,y) {
     a = Math.pow(x.lat() - y.lat(), 2);
